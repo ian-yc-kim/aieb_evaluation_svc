@@ -1,7 +1,12 @@
-import os
 from dotenv import load_dotenv
+from pydantic_settings import BaseSettings
 
 load_dotenv()
 
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///:memory:")
-SERVICE_PORT = os.getenv("SERVICE_PORT", 8000)
+class Settings(BaseSettings):
+    DATABASE_URL: str = "sqlite:///:memory:"
+    SERVICE_PORT: int = 8000
+    OPENAI_API_KEY: str
+    OPENAI_MODEL: str
+
+settings = Settings()

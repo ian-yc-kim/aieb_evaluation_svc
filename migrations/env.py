@@ -7,15 +7,14 @@ from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
 from alembic import context
+from aieb_evaluation_svc.config import settings
 
 config = context.config
 
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
-load_dotenv()
-database_url = os.getenv("DATABASE_URL")
-config.set_main_option('sqlalchemy.url', database_url)
+config.set_main_option('sqlalchemy.url', settings.DATABASE_URL)
 
 target_metadata = Base.metadata
 
