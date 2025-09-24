@@ -2,7 +2,7 @@ import logging
 
 import uvicorn
 from aieb_evaluation_svc.app import app
-from aieb_evaluation_svc.config import settings
+from aieb_evaluation_svc.core.config import settings
 
 
 # Set up logging for the application

@@ -3,7 +3,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import scoped_session, sessionmaker, Session
 
-from aieb_evaluation_svc.config import settings
+from aieb_evaluation_svc.core.config import settings
 
 Base = declarative_base()
 
